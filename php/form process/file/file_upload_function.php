@@ -23,7 +23,7 @@ if($filename = upload_single($file,$allow_type,$path,$error,$allow_format)){
   function upload_single($file,$allow_type,$path,&$error,$allow_format=array(),$max_size=2000000)
 {
   //@1 check if it's an uploaded file
-  if(!is_array($file)||!isset($file['error'])){
+  if(!is_array($file) || !isset($file['error'])){
     //unvalid file
     $error = 'Not a valid file';
     return false;

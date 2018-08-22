@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>show sql</title>
+  <style>
+    table {
+      margin-left: 10%;
+      margin-right: 10%;
+      width: 80%;
+    }
+  </style>
+</head>
+
+<body>
+  <table border="1">
+    <thead>
+      <th>No</th>
+      <th>Time</th>
+      <th>Author</th>
+      <th>Operator</th>
+    </thead>
+    <?php foreach($comment as $k => $new):?>
+    <tr>
+      <td>
+        <?php echo $k+1;?>
+      </td>
+      <td>
+        <?php echo $new['publishTime'];?>
+      </td>
+      <td>
+        <a href="mysql_editor.php?id=<?php echo $new['id']?>;">
+          <?php echo $new['author'];?>
+        </a>
+      </td>
+      <td>
+        <a href="mysql_delete.php?id=<?php echo $new['id']?>" onclick="return confirm('Do you want to delete?')">delete</a>&nbsp;|
+        <a href="mysql_editor.php?id=<?php echo $new['id']?>">change</a>
+      </td>
+    </tr>
+    <?php endforeach;?>
+  </table>
+
+</body>
+
+</html>

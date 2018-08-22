@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Editor</title>
+</head>
+
+
+<body>
+  <?php print_r($comment);?>
+  <form action="mysql_update.php" method="post">
+    作者：
+    <input type="text" name="author" value="<?php echo $comment['author'];?>">
+    <br/> 内容：
+    <input type="text" name="text" value="<?php echo $comment['comment'];?>">
+    <input type="submit" name="btn" value="submit">
+    <input type="hidden" name="id" value="<?php echo $comment['id'];?>">
+  </form>
+</body>
+
+</html>
