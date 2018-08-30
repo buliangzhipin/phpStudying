@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <?php foreach($pageTitle as $page){?>
+      <td>
+        <a href="?a=showSubtitle&pid=<?php echo $page['id'];?>">
+          <?php echo $page['title'];?>
+        </a>
+      </td>
+      <?php }?>
+    </tr>
+  </table>
+
+  <br/>
+  <?php echo $text;?>
+  <br/>
+  <?php foreach($comment as $com){ echo $com['comment'];};?>
+  <form class="" action="?a=insertComment&sid=$defaultID" method="post">
+    <input type="text" name="author" value="">
+    <input type="text" name="text" value="">
+  </form>
+</body>
+
+</html>

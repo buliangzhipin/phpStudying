@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>add Title</title>
+  <style>
+    form {
+      width: 70%;
+      margin-left: 15%;
+      margin-right: 15%;
+    }
+
+    table {
+      margin-top: 10px;
+      width: 70%;
+      margin-left: 15%;
+      margin-right: 15%;
+      border: 1px solid;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      text-align: center;
+      border: 1px solid;
+      border-color: #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="addContent.php?id=2" method="post">
+    <input type="text" name="main" value="" />
+    <input type="submit" name="btn" value="add">
+  </form>
+
+  <table>
+    <thead>
+      <th>Title</th>
+      <th>Operation</th>
+    </thead>
+    <?php foreach($result as $k => $row):?>
+    <tr>
+      <td>
+        <?php echo $row['main']?>
+      </td>
+      <td>
+        delete | change
+      </td>
+    </tr>
+    <?php endforeach;?>
+  </table>
+</body>
+
+</html>

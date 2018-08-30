@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>view</title>
+  <style media="screen">
+    table {
+      margin-left: 10%;
+      margin-right: 10%;
+      width: 80%;
+    }
+  </style>
+</head>
+
+<body>
+  <form class="" action="controller.php" method="get">
+    <input type="text" name="title" value="">
+    <input type="submit" name="option" value="insert">
+  </form>
+
+  <table border="1">
+    <thead>
+      <td>id</td>
+      <td>title</td>
+      <td>time</td>
+      <td>option</td>
+    </thead>
+    <?php foreach($titleInformation as $title){?>
+    <tr>
+      <td>
+        <?php echo $title['id']?>
+      </td>
+      <td>
+        <?php echo $title['title']?>
+      </td>
+      <td>
+        <?php echo $title['updatetime']?>
+      </td>
+      <td>
+        <a href="controller.php?option=delete&id=<?php echo $title['id']?>" onclick="return confirm('do you want to delete?')">delete</a> |
+        <a href="controller.php?option=delete&id=<?php echo $title['id']?>">edit</a>
+      </td>
+    </tr>
+    <?php }?>
+  </table>
+
+</body>
+
+</html>
